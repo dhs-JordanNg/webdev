@@ -13,9 +13,17 @@ app.get('/app.js', function(req, res) {
     res.sendFile(__dirname + '/app.js');
 });
 
+app.get('/style.css',function(req,res) {
+    res.sendFile(__dirname + '/style.css');
+});
 app.route('/jokes').get(function(req,res,next){
 
     var randomNumber = Math.floor(Math.random()*jokes.length);
 
     res.send(jokes[randomNumber]);
 });
+
+
+
+app..post("/upvote", function(reg,res) )
+
