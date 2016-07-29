@@ -1,4 +1,5 @@
 // jQuery goes here
+var index = 0;
 $(function() {
     $("#getJoke").click(
         function() {
@@ -6,6 +7,8 @@ $(function() {
                 // TODO: change HTML instead of alert
                 $("#setup").html(data.setup);    
                 $("#punchline").html(data.punchline);
+                index = data.id;
+                alert(index);
             },"json")
         }
     );
