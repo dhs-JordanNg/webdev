@@ -25,5 +25,10 @@ app.route('/jokes').get(function(req,res,next){
 
 
 
-app..post("/upvote", function(reg,res) )
+app..post("/upvote", function(reg,res) {
+    console.log("someone upvoted");
+});
 
+app..post("/downvote", function(reg,res) {
+    console.log("someone downvoted");
+});
