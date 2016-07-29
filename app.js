@@ -13,11 +13,23 @@ $(function() {
         }
     );
     $("#upvote").on("click",function() {
-        $.post("/upvote");
+        $.ajax({
+            url: '/upvote',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({id: index})
+        });
+        //$.post("/upvote");
     });
     
     $("#downvote").on("click",function() {
-        $.post("/downvote");
+        //$.post("/downvote");
+        $.ajax({
+            url: '/downvote',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({id: index})
+        });
     });
 });
 //hellooooo
