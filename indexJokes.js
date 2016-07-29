@@ -23,3 +23,37 @@ app.route('/jokes').get(function(req,res,next){
     jokes[randomNumber].id = randomNumber;
     res.send(jokes[randomNumber]);
 });
+
+app.post('/upvote', function(req, res) {
+    console.log("Someone tried to upvote something");
+    console.log(req.body);
+    console.log(req,body,id);
+    
+    var jokeIndex = req.body.id;
+    
+    if (typeof jokes[jokeIndex].votes === 'undefined') {
+        console.log("creating joke");
+        jokes[jokeIndex].votes = 0;
+    }
+    
+    jokes[jokeIndex].votes++;
+});
+
+app.post('/downvote', function(req, res) {
+    console.log("Someone tried to downvote something.");
+    console.log(req.body);
+    console.log(req.body.id);
+    
+    var jokeIndex = req.body.id;
+    
+    if (typeof jokes[jokeIndex].votes === 'undefined') {
+        console.log("creating joke");
+        jokes[jokeIndex].votes = 0;
+    }
+    
+    jokes[jokeIndex].votes--;
+
+    }
+
+    
+}
