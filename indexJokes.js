@@ -20,5 +20,6 @@ app.get('/style.css',function(req,res) {
 
 app.route('/jokes').get(function(req,res,next){
     var randomNumber = Math.floor(Math.random()*jokes.length);
+    jokes[randomNumber].id = randomNumber;
     res.send(jokes[randomNumber]);
 });
